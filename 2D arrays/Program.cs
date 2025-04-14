@@ -4,17 +4,24 @@
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("What are the dimesions of the grid?");
-            Console.ReadLine();
-            int userInput = 0;
+            string userInput = "";
 
 
+            Console.WriteLine("What are the dimesions of the grid, how many rows and how many columns do you need?");
+            userInput = Console.ReadLine();
+            //int userInput = 0;
+
+            //create grid and fill with values 
             int[,] Array2 = new int[8, 8];
             Array2[2, 3] = 1;
-
+            //output array 
             Console.WriteLine(Array2[2, 3]);
-            //example taken from vid in moodule 
+
+
+
+            //fill the grid with values → you can either put random symbols or let the user decide how to fill value, be creative
+            //print the content of the grid
+            //modify specific ranges → you can try to mark the cells of the grid like a chess board where alternating cells are marked or display the border of the grid
 
 
 
