@@ -1,21 +1,37 @@
-﻿namespace _2D_arrays
+﻿using System.Reflection.Metadata;
+
+namespace _2D_arrays
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string userInput = "";
-
-
-            Console.WriteLine("What are the dimesions of the grid, how many rows and how many columns do you need?");
-            userInput = Console.ReadLine();
             //int userInput = 0;
+            int userRow = 0;
+            int userCol = 0;
 
+
+            Console.WriteLine("What are the dimesions of the grid, how many rows do you need?");            
+            Console.ReadLine();
+            //save input 
+
+            Console.WriteLine("What are the dimesions of the grid, how many columns do you need?");
+            Console.ReadLine();
+                        
             //create grid and fill with values 
-            int[,] Array2 = new int[8, 8];
-            Array2[2, 3] = 1;
+            int[,] grid = new int[userRow,userCol];
+            grid[2, 3] = 1;
             //output array 
-            Console.WriteLine(Array2[2, 3]);
+            Console.WriteLine(grid[2, 3]);
+
+            for (int i = 0; i < 5; i++)
+            {
+
+
+            }
+            //1 loop for row
+            //1 loop for col
+
 
 
 
@@ -51,7 +67,7 @@
 
 //Console.WriteLine(Array3[2, 3, 3]);
 
-////walking
+////walking array
 //int[,] ArrayW = new int[3, 3];
 //Array2[0, 0] = 1;
 
