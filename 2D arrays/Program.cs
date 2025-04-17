@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Metadata;
+using System.Text.Json.Serialization;
 
 namespace _2D_arrays
 {
@@ -6,37 +7,43 @@ namespace _2D_arrays
     {
         static void Main(string[] args)
         {
-            //int userInput = 0;
-            //int userRow = 0;
-            //int userCol = 0;
-
+            
             Console.WriteLine("What are the dimesions of the grid, how many rows do you need?");            
             string userRow = Console.ReadLine();
-            //save input 
+            
 
             Console.WriteLine("What are the dimesions of the grid, how many columns do you need?");
             string userCol = Console.ReadLine();
-                        
-            //create grid and fill with values 
-            int[,] grid = new int[int.Parse(userRow), int.Parse(userCol)];
-            grid[int.Parse(userRow), int.Parse(userCol)] = 1;
+
+            Console.WriteLine($"You have chosen {userRow} rows and {userCol} columns");
+
+            
+            int[,] grid = new int[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values 
 
             //output array 
-            Console.WriteLine(grid);
+                        
+            for (int i = 0; i < 3; i++)             //row
+            {
+                
+                for (int j = 0; j < 3; j++)         //col
+                {
+                    grid[i, j] = 1;                 //populate grid
+                    
+                }
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("");
+                for (int j = 0; j < 3; j++)
+                {
+
+                    Console.Write($"{grid[i,j]}");  //print
+
+                }                  //next step populate with rad number rather than 1, need to do this within the loop (refer back to hangman project)
+            }
+        }
             
-            //change i to userRow/userCol or r/c???
-            for (int i = 0; i < 5; i++)
-            {
-
-
-            }
-            for (int i = 0; i < 5; i++)
-            {
-
-
-            }
-            //1 loop for row
-            //1 loop for col
 
 
 
@@ -47,7 +54,7 @@ namespace _2D_arrays
 
 
 
-        }
+        
     }
 }
 
