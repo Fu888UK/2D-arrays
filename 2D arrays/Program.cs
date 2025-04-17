@@ -7,22 +7,22 @@ namespace _2D_arrays
         static void Main(string[] args)
         {
             //int userInput = 0;
-            int userRow = 0;
-            int userCol = 0;
+            //int userRow = 0;
+            //int userCol = 0;
 
 
             Console.WriteLine("What are the dimesions of the grid, how many rows do you need?");            
-            Console.ReadLine();
+            string userRow = Console.ReadLine();
             //save input 
 
             Console.WriteLine("What are the dimesions of the grid, how many columns do you need?");
-            Console.ReadLine();
+            string userCol = Console.ReadLine();
                         
             //create grid and fill with values 
-            int[,] grid = new int[userRow,userCol];
-            grid[2, 3] = 1;
+            int[,] grid = new int[int.Parse(userRow), int.Parse(userCol)];
+            grid[int.Parse(userRow), int.Parse(userCol)] = 1;
             //output array 
-            Console.WriteLine(grid[2, 3]);
+            Console.WriteLine(grid);
 
             for (int i = 0; i < 5; i++)
             {
