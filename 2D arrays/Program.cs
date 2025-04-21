@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata;
+﻿using System;
+using System.Reflection.Metadata;
 using System.Text.Json.Serialization;
 
 namespace _2D_arrays
@@ -21,13 +22,17 @@ namespace _2D_arrays
             int[,] grid = new int[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values 
 
             //output array 
-                        
+
+            Random rnd = new Random();
+            int randomNumber = random.Next(0, 101);
+            //Console.WriteLine("Random number: " + randomNumber);
+
             for (int i = 0; i < 3; i++)             //row
             {
                 
                 for (int j = 0; j < 3; j++)         //col
                 {
-                    grid[i, j] = 1;                 //populate grid
+                    grid[i, j] = randomNumber;                 //populate grid
                     
                 }
             }
@@ -40,7 +45,7 @@ namespace _2D_arrays
 
                     Console.Write($"{grid[i,j]}");  //print
 
-                }                  //next step populate with rad number rather than 1, need to do this within the loop (refer back to hangman project)
+                }                  //next step populate with rand number rather than 1, need to do this within the loop (refer back to hangman project)
             }
         }
             
