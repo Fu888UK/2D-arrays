@@ -27,10 +27,10 @@ namespace _2D_arrays
             //int randomNumber = rnd.Next(0, 101);
             //Console.WriteLine("Random number: " + randomNumber);
 
-            for (int i = 0; i < 3; i++)             //row
+            for (int i = 0; i < int.Parse(userRow); i++)             //row
             {
                 
-                for (int j = 0; j < 3; j++)         //col
+                for (int j = 0; j < int.Parse(userCol); j++)         //col
                 {
                     grid[i, j] = rnd.Next(0,9);                 //populate grid
                     
