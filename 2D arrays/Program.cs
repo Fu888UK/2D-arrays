@@ -24,7 +24,7 @@ namespace _2D_arrays
             //output array 
 
             Random rnd = new Random();
-            int randomNumber = random.Next(0, 101);
+            int randomNumber = rnd.Next(0, 101);
             //Console.WriteLine("Random number: " + randomNumber);
 
             for (int i = 0; i < 3; i++)             //row
