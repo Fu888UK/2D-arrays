@@ -9,7 +9,7 @@ namespace _2D_arrays
         static void Main(string[] args)
         {
             
-            Console.WriteLine("What are the dimesions of the grid, how many rows do you need?");            
+            Console.WriteLine("What are the dimensions of the grid, how many rows do you need?");            
             string userRow = Console.ReadLine();
             
 
@@ -23,43 +23,46 @@ namespace _2D_arrays
 
             //output array 
 
-            Random rnd = new Random();
-            //int randomNumber = rnd.Next(0, 101);
-            //Console.WriteLine("Random number: " + randomNumber);
+            int rows = int.Parse(userRow);
+            int cols = int.Parse(userCol);
 
-            for (int i = 0; i < int.Parse(userRow); i++)             //row
+            Random rnd = new Random();
+            
+
+            for (int i = 0; i < grid.GetLength(0); i++)             //row
             {
-                
-                for (int j = 0; j < int.Parse(userCol); j++)         //col
-                {
+                //grid.GetLength(i);
+
+                for (int j = 0; j < grid.GetLength(1); j++)         //col
+                {                                        
                     grid[i, j] = rnd.Next(0,9);                 //populate grid
                     
                 }
             }
 
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine("");
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < grid.GetLength(0); i++)
                 {
-
+                Console.WriteLine("");
+                for (int j = 0; j < grid.GetLength(1); j++) 
+                {
                     Console.Write($"{grid[i,j]}");  //print
 
-                }                  //next step populate with rand number rather than 1, need to do this within the loop (refer back to hangman project)
+                }                   
             }
         }
-            
+        //2nd and 3rd modes
+        // populate grid for each modes 
 
 
 
 
-            //fill the grid with values → you can either put random symbols or let the user decide how to fill value, be creative
-            //print the content of the grid
-            //modify specific ranges → you can try to mark the cells of the grid like a chess board where alternating cells are marked or display the border of the grid
+        //fill the grid with values → you can either put random symbols or let the user decide how to fill value, be creative
+        //print the content of the grid
+        //modify specific ranges → you can try to mark the cells of the grid like a chess board where alternating cells are marked or display the border of the grid
 
 
 
-        
+
     }
 }
 
