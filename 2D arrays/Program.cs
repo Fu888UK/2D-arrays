@@ -8,17 +8,23 @@ namespace _2D_arrays
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("What are the dimensions of the grid, how many rows do you need?");            
+            Console.WriteLine("Please select the mode you would like 1 for random numbers, 2 for alternating symbols or 3 for marking the borders");
+            string mode = Console.ReadLine();
+
+            Console.WriteLine($"You have selected {mode}");
+            int selectedMode = int.Parse(mode);
+
+
+
+            Console.WriteLine("What are the dimensions of the grid, how many rows do you need?");
             string userRow = Console.ReadLine();
-            
 
             Console.WriteLine("What are the dimesions of the grid, how many columns do you need?");
             string userCol = Console.ReadLine();
 
             Console.WriteLine($"You have chosen {userRow} rows and {userCol} columns");
 
-            
+
             int[,] grid = new int[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values 
 
             //output array 
@@ -27,8 +33,10 @@ namespace _2D_arrays
             int cols = int.Parse(userCol);
 
             Random rnd = new Random();
-            
 
+
+            if (selectedMode == 1)
+                
             for (int i = 0; i < grid.GetLength(0); i++)             //row
             {
                 //grid.GetLength(i);
@@ -49,6 +57,22 @@ namespace _2D_arrays
 
                 }                   
             }
+            if (selectedMode == 2) 
+            {
+                for (int i = 0; i < 3; i++) ;       //populate grid for mode 2
+                {
+                    Console.Write("");              //print
+                }
+            }
+            if (selectedMode == 3)
+            {
+                for (int i = 0; i < 3; i++) ;       //populate grid for mode 3 
+                {
+                    Console.Write("");              //print
+                }
+            }
+
+
         }
         //2nd and 3rd modes
         // populate grid for each modes 
