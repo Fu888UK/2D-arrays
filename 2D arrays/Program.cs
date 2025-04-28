@@ -8,13 +8,12 @@ namespace _2D_arrays
     {
         static void Main(string[] args)
         {
+            //use const instead of magic numbers
             Console.WriteLine("Please select the mode you would like 1 for random numbers, 2 for alternating symbols or 3 for marking the borders");
             string mode = Console.ReadLine();
 
             Console.WriteLine($"You have selected {mode}");
             int selectedMode = int.Parse(mode);
-
-
 
             Console.WriteLine("What are the dimensions of the grid, how many rows do you need?");
             string userRow = Console.ReadLine();
@@ -35,40 +34,55 @@ namespace _2D_arrays
             Random rnd = new Random();
 
 
-            if (selectedMode == 1)
-                
-            for (int i = 0; i < grid.GetLength(0); i++)             //row
+            if (selectedMode == 1) 
             {
-                //grid.GetLength(i);
+                for (int i = 0; i < grid.GetLength(0); i++)             //row
+                {
+                    //grid.GetLength(i);
 
-                for (int j = 0; j < grid.GetLength(1); j++)         //col
-                {                                        
-                    grid[i, j] = rnd.Next(0,9);                 //populate grid
+                    for (int j = 0; j < grid.GetLength(1); j++)         //col
+                    {
+                        grid[i, j] = rnd.Next(0, 9);                 //populate grid                    
+                    }
+                }
+
+                for (int i = 0; i < grid.GetLength(0); i++)
+                {
+                    Console.WriteLine("");
+                    for (int j = 0; j < grid.GetLength(1); j++)
+                    {
+                        Console.Write($"{grid[i, j]}");  //print
+                    }
+                }
+
+            }              
+            
+            if (selectedMode == 2) //populate grid for mode 2 (alternate symbols)
+            {
+                for (int i = 0; i < grid.GetLength(0); i++)       //row   
+                {
+                    for (int j = 0; j < grid.GetLength(1); j++)         //col
+                    {
+                        grid[i, j] = (i + j) % 2 == 0 ? 'O' : 'X';                 //populate grid                    
+                    }
                     
                 }
-            }
+                for (int i = 0; i < grid.GetLength(0); i++)
+                {
+                    Console.WriteLine("");
+                    for (int j = 0; j < grid.GetLength(1); j++)
+                    {
+                        Console.Write(grid[i, j] + " ");  //print
 
-            for (int i = 0; i < grid.GetLength(0); i++)
-                {
-                Console.WriteLine("");
-                for (int j = 0; j < grid.GetLength(1); j++) 
-                {
-                    Console.Write($"{grid[i,j]}");  //print
-
-                }                   
-            }
-            if (selectedMode == 2) 
-            {
-                for (int i = 0; i < 3; i++) ;       //populate grid for mode 2
-                {
-                    Console.Write("");              //print
+                    }
                 }
             }
+
             if (selectedMode == 3)
             {
-                for (int i = 0; i < 3; i++) ;       //populate grid for mode 3 
+                for (int i = 0; i < 3; i++) ;       //populate grid for mode 3 (marking borders)
                 {
-                    Console.Write("");              //print
+                    //Console.Write($"{grid[i, j]}");              //print
                 }
             }
 
