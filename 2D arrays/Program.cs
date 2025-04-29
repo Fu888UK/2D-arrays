@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Reflection.Metadata;
 using System.Text.Json.Serialization;
 
@@ -30,6 +31,9 @@ namespace _2D_arrays
 
             int rows = int.Parse(userRow);
             int cols = int.Parse(userCol);
+            char sym1 = 'X';
+            char sym2 = 'O';
+
 
             Random rnd = new Random();
 
@@ -63,7 +67,14 @@ namespace _2D_arrays
                 {
                     for (int j = 0; j < grid.GetLength(1); j++)         //col
                     {
-                        grid[i, j] = (i + j) % 2 == 0 ? 'O' : 'X';                 //populate grid                    
+                        if ((i + j) % 2 == 0)                //populate grid
+                        {
+                            Console.WriteLine(sym1);
+                        }
+                        else
+                        {
+                            Console.Write(sym2);
+                        }
                     }
                     
                 }
