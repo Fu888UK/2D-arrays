@@ -9,6 +9,8 @@ namespace _2D_arrays
     {
         static void Main(string[] args)
         {
+            const char SYM1 = 'X';
+            const char SYM2 = 'O';
             //use const instead of magic numbers
             Console.WriteLine("Please select the mode you would like 1 for random numbers, 2 for alternating symbols or 3 for marking the borders");
             string mode = Console.ReadLine();
@@ -31,10 +33,7 @@ namespace _2D_arrays
 
             int rows = int.Parse(userRow);
             int cols = int.Parse(userCol);
-            char sym1 = 'X';
-            char sym2 = 'O';
-
-
+            
             Random rnd = new Random();
 
 
@@ -69,11 +68,11 @@ namespace _2D_arrays
                     {
                         if ((i + j) % 2 == 0)                //populate grid
                         {
-                            Console.WriteLine(sym1);
+                            Console.WriteLine(SYM1); //access grid i,j - to allocate - like in line 49
                         }
                         else
                         {
-                            Console.Write(sym2);
+                            Console.Write(SYM2);
                         }
                     }
                     
