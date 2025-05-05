@@ -66,16 +66,25 @@ namespace _2D_arrays
                 {
                     for (int j = 0; j < grid.GetLength(1); j++)         //col
                     {
-                        if ((i + j) % 2 == 0)                //populate grid
-                        {
-                            Console.WriteLine(SYM1); //access grid i,j - to allocate - like in line 49
-                        }
-                        else
-                        {
-                            Console.Write(SYM2);
-                        }
+                        grid[i, j] = ((i + j) % 2 == 0) ? SYM1 : SYM2;          //? researched that i can use this symbol, shorthand for if-else
+                                                                                //i+j adds row and colms
+                                                                                //(i + j) % 2 == 0) checks if the sum is even, the % gives the remainder (as discussed in LC)
+                                                                                //even - true, odd = false 
+                                                                                //if true evaluates SYM1
+                                                                                //if false evaluates SYM2 
+
+                        //if ((i + j) % 2 == 0)                //populate grid
+                        //{
+                        //    grid[i, j] = SYM1;
+                        //    //Console.WriteLine(SYM1); //access grid i,j - to allocate - like in line 49
+                        //}
+                        //else
+                        //{
+                        //    grid[i, j] = SYM2;
+                        //    //Console.Write(SYM2);
+                        //}
                     }
-                    
+
                 }
                 for (int i = 0; i < grid.GetLength(0); i++)
                 {
@@ -85,6 +94,7 @@ namespace _2D_arrays
                         Console.Write(grid[i, j] + " ");  //print
 
                     }
+                    Console.WriteLine();
                 }
             }
 
