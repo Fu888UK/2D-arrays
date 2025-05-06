@@ -27,7 +27,7 @@ namespace _2D_arrays
             Console.WriteLine($"You have chosen {userRow} rows and {userCol} columns");
 
 
-            int[,] grid = new int[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values 
+            char[,] grid = new char[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values 
 
             //output array 
 
@@ -45,7 +45,7 @@ namespace _2D_arrays
 
                     for (int j = 0; j < grid.GetLength(1); j++)         //col
                     {
-                        grid[i, j] = rnd.Next(0, 9);                 //populate grid                    
+                        grid[i, j] = (char)rnd.Next(0, 9);                 //populate grid                    
                     }
                 }
 
