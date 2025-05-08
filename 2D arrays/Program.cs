@@ -11,7 +11,7 @@ namespace _2D_arrays
         {
             const char SYM1 = 'X';
             const char SYM2 = 'O';
-            //use const instead of magic numbers
+            
             Console.WriteLine("Please select the mode you would like 1 for random numbers, 2 for alternating symbols or 3 for marking the borders");
             string mode = Console.ReadLine();
 
@@ -28,6 +28,7 @@ namespace _2D_arrays
 
 
             char[,] grid = new char[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values 
+            //string[,] grid = new string[(userRow),(userCol)];
 
             //output array 
 
@@ -36,16 +37,24 @@ namespace _2D_arrays
             
             Random rnd = new Random();
 
+            //cast a type into a type (try a string array rather than char or int)
 
-            if (selectedMode == 1) 
-            {
-                for (int i = 0; i < grid.GetLength(0); i++)             //row
-                {
-                    //grid.GetLength(i);
+            //grid[i, j] = (char)('0' + rnd.Next(0, 9)); 
+            
+            // (selectedWord[i].ToString() == userGuess)
 
-                    for (int j = 0; j < grid.GetLength(1); j++)         //col
+            //  hiddenWord[i] = Char.Parse(userGuess);
+
+            //(grid.ToString() == )
+
+
+            if (selectedMode == 1)  
+            {                
+                for (int i = 0; i < grid.GetLength(0); i++)                 //row
+                {                    
+                    for (int j = 0; j < grid.GetLength(1); j++)             //col
                     {
-                        grid[i, j] = (char)rnd.Next(0, 9);                 //populate grid                    
+                        grid[i, j] = (char)('0' + rnd.Next(0, 9));                //populate grid                    
                     }
                 }
 
@@ -61,7 +70,7 @@ namespace _2D_arrays
             }              
             
             if (selectedMode == 2) //populate grid for mode 2 (alternate symbols)
-            {
+            {                
                 for (int i = 0; i < grid.GetLength(0); i++)       //row   
                 {
                     for (int j = 0; j < grid.GetLength(1); j++)         //col
@@ -99,7 +108,7 @@ namespace _2D_arrays
             }
 
             if (selectedMode == 3)
-            {
+            {                
                 for (int i = 0; i < 3; i++) ;       //populate grid for mode 3 (marking borders)
                 {
                     //Console.Write($"{grid[i, j]}");              //print
