@@ -27,8 +27,7 @@ namespace _2D_arrays
             Console.WriteLine($"You have chosen {userRow} rows and {userCol} columns");
 
 
-            char[,] grid = new char[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values 
-            //string[,] grid = new string[(userRow),(userCol)];
+            char[,] grid = new char[int.Parse(userRow), int.Parse(userCol)];//create grid and fill with values    //a 2D array 
 
             //output array 
 
@@ -109,44 +108,81 @@ namespace _2D_arrays
 
             if (selectedMode == 3)
             {
-                for (int i = 0; i < grid.GetLength(0); i++)                 //row
+                for (int i = 0; i < rows; i++)                                //outer loop i goes through each row 
                 {
-                    Console.WriteLine("+---+---+---+");
-
-                    for (int j = 0; j < grid.GetLength(1); j++)             //col
+                    for (int j = 0; j < cols; j++)                            // inner loop j goes through eacj col 
                     {
-
-                        grid[i, j] = (char)('0' + rnd.Next(0, 9));                //populate grid
-
-                        //Console.WriteLine($"|{i,j}|{i,j}|{i,j}");
+                        grid[i, j] = ((i + j) % 2 == 0) ? SYM1 : SYM2;        //checks if i and j are even 
 
                     }
-                }
-                for (int i = 0; i < grid.GetLength(0); i++)
-                {
-                    Console.WriteLine("");
-                    for (int j = 0; j < grid.GetLength(1); j++)
-                    {
-                        Console.Write(grid[i, j] + " ");  //print
 
-                    }
                 }
+                Console.Write("+");
+
+                for (int j = 0; j < cols; j++)
+                {
+                    Console.Write("--");
+                }
+                Console.WriteLine("+");
+
+                for (int i = 0; i < rows; i++)
+                {
+                    Console.Write("|");
+                    for (int j = 0; j < cols; j++)
+                    {
+                        Console.Write(grid[i, j] + " ");
+                    }
+                    Console.WriteLine("|");
+                }
+
+                Console.Write("+");
+                for (int j = 0; j < cols; j++)
+                {
+                    Console.Write("--");
+                }
+                Console.WriteLine("+");
+
+                ////////    Console.WriteLine("+---+---+---+");
+                ////////    for (int i = 0; i < grid.GetLength(0); i++)                 //row
+                ////////    {
+                ////////        for (int j = 0; j < grid.GetLength(1); j++)             //col
+                ////////        {
+
+                ////////            grid[i, j] = ((i + j) % 2 == 0) ? SYM1 : SYM2;
+                ////////            //grid[i, j] = (char)('0' + rnd.Next(0, 9));                //populate grid
+
+                ////////            //Console.WriteLine($"|{i,j}|{i,j}|{i,j}");
+
+                ////////        }
+                ////////    }
+
+
+                ////////    for (int i = 0; i < grid.GetLength(0); i++)
+                ////////    {
+                ////////        Console.WriteLine("");
+                ////////        for (int j = 0; j < grid.GetLength(1); j++)
+                ////////        {
+                ////////            Console.Write(grid[i, j] + " ");  //print
+
+                ////////        }
+                ////////    }
+
+
+                //}
+                //2nd and 3rd modes
+                // populate grid for each modes 
+
+
+
+
+                //fill the grid with values → you can either put random symbols or let the user decide how to fill value, be creative
+                //print the content of the grid
+                //modify specific ranges → you can try to mark the cells of the grid like a chess board where alternating cells are marked or display the border of the grid
+
+
 
 
             }
-            //2nd and 3rd modes
-            // populate grid for each modes 
-
-
-
-
-            //fill the grid with values → you can either put random symbols or let the user decide how to fill value, be creative
-            //print the content of the grid
-            //modify specific ranges → you can try to mark the cells of the grid like a chess board where alternating cells are marked or display the border of the grid
-
-
-
-
         }
     }
 }
