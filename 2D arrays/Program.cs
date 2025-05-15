@@ -80,17 +80,7 @@ namespace _2D_arrays
                                                                                 //even - true, odd = false 
                                                                                 //if true evaluates SYM1
                                                                                 //if false evaluates SYM2 
-
-                        //if ((i + j) % 2 == 0)                //populate grid
-                        //{
-                        //    grid[i, j] = SYM1;
-                        //    //Console.WriteLine(SYM1); //access grid i,j - to allocate - like in line 49
-                        //}
-                        //else
-                        //{
-                        //    grid[i, j] = SYM2;
-                        //    //Console.Write(SYM2);
-                        //}
+                                                                                                        
                     }
 
                 }
@@ -113,34 +103,44 @@ namespace _2D_arrays
                     for (int j = 0; j < cols; j++)                            // inner loop j goes through eacj col 
                     {
                         grid[i, j] = ((i + j) % 2 == 0) ? SYM1 : SYM2;        //checks if i and j are even 
-
                     }
-
                 }
-                Console.Write("+");
+                Console.Write("+");             
 
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < cols-1; j++)              //top border 
                 {
-                    Console.Write("--");
+                    Console.Write("-+");                   //??? added a + but now getting 2 extra -                   
+                    //Console.Write("+");                   //??? AFTER DUBUGGING FEEL I SHOULD ADD SOMETHING HERE (FOR COL)                     
                 }
-                Console.WriteLine("+");
+                Console.WriteLine("");
 
                 for (int i = 0; i < rows; i++)
                 {
                     Console.Write("|");
                     for (int j = 0; j < cols; j++)
                     {
-                        Console.Write(grid[i, j] + " ");
+                        Console.Write(grid[i, j] + "");    //replaced space with|, but now has extra | at the end 
                     }
                     Console.WriteLine("|");
+
                 }
 
                 Console.Write("+");
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < cols; j++)  //bottom border 
                 {
-                    Console.Write("--");
+                    Console.Write("--+");       //added a +
                 }
-                Console.WriteLine("+");
+                Console.WriteLine("+");          
+
+                
+
+
+
+
+
+
+
+
 
                 ////////    Console.WriteLine("+---+---+---+");
                 ////////    for (int i = 0; i < grid.GetLength(0); i++)                 //row
@@ -189,59 +189,3 @@ namespace _2D_arrays
 
 
 
-////1 dimesion
-//int[] Array1 = new int[5];
-//Array1[3] = 1;
-
-//Console.WriteLine(Array1[3]);
-
-////2 dimension
-//int[,] Array2 = new int[8, 8];
-//Array2[2, 3] = 1;
-
-//Console.WriteLine(Array2[2, 3]);
-
-////3 dimension 
-//int[,,] Array3 = new int[3, 3, 3];
-//Array3[3, 3, 3] = 1;
-
-//int result = 5 * Array3[3, 2, 1];
-
-//Console.WriteLine(Array3[2, 3, 3]);
-
-////walking array
-//int[,] ArrayW = new int[3, 3];
-//Array2[0, 0] = 1;
-
-//Console.WriteLine(ArrayW[0, 0]);
-//Console.WriteLine(ArrayW[0, 1]);
-//Console.WriteLine(ArrayW[0, 2]);
-
-//Console.WriteLine(ArrayW[1, 0]);
-//Console.WriteLine(ArrayW[1, 1]);
-//Console.WriteLine(ArrayW[1, 2]);
-
-//Console.WriteLine(ArrayW[2, 0]);
-//Console.WriteLine(ArrayW[2, 1]);
-//Console.WriteLine(ArrayW[2, 2]);
-
-//for (int lineIndex = 0; lineIndex < 3; lineIndex++) 
-//{
-//    Console.WriteLine(ArrayW[lineIndex, 0]);
-//    Console.WriteLine(ArrayW[lineIndex, 1]);
-//    Console.WriteLine(ArrayW[lineIndex, 2]);
-
-//}
-
-//int i = 6;
-//while (i < 6)
-//{
-//    Console.WriteLine(i);
-//    i++;
-//}
-//for (int a = 0; a < 6; a++)
-
-//{
-//    Console.WriteLine(a);
-
-//}
