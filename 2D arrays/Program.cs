@@ -126,11 +126,11 @@ namespace _2D_arrays
                 }
 
                 Console.Write("+");
-                for (int j = 0; j < cols; j++)  //bottom border 
+                for (int j = 0; j < cols-1; j++)  //bottom border 
                 {
-                    Console.Write("--+");       //added a +
+                    Console.Write("-+");       //added a +
                 }
-                Console.WriteLine("+");          
+                Console.WriteLine("");          
 
                 
 
