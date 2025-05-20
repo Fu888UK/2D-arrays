@@ -107,7 +107,7 @@ namespace _2D_arrays
                 }
                 Console.Write("+");             
 
-                for (int j = 0; j < cols-1; j++)              //top border 
+                for (int j = 0; j < cols+1; j++)              //top border 
                 {
                     Console.Write("--+");                   //??? added a + but now getting 2 extra -                   
                     //Console.Write("+");                   //??? AFTER DUBUGGING FEEL I SHOULD ADD SOMETHING HERE (FOR COL)                     
@@ -116,17 +116,17 @@ namespace _2D_arrays
 
                 for (int i = 0; i < rows; i++)
                 {
-                    Console.Write("|");
+                    Console.Write("| ");
                     for (int j = 0; j < cols; j++)
                     {
-                        Console.Write(grid[i, j] + "|");    //replaced space with|, but now has extra | at the end 
+                        Console.Write(grid[i, j] + " | ");    //replaced space with|, but now has extra | at the end 
                     }
                     Console.WriteLine("");
 
                 }
 
                 Console.Write("+");
-                for (int j = 0; j < cols-1; j++)  //bottom border 
+                for (int j = 0; j < cols+1; j++)  //bottom border 
                 {
                     Console.Write("--+");       //added a +
                 }
