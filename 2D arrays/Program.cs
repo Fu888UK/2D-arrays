@@ -11,6 +11,7 @@ namespace _2D_arrays
         {
             const char SYM1 = 'X';
             const char SYM2 = 'O';
+            //creat const for modes 
 
             Console.WriteLine("Please select the mode you would like 1 for random numbers, 2 for alternating symbols or 3 for marking the borders");
             string mode = Console.ReadLine();
@@ -107,28 +108,28 @@ namespace _2D_arrays
                 }
                 Console.Write("+");             
 
-                for (int j = 0; j < cols+1; j++)              //top border 
+                for (int j = 0; j < cols; j++)              //top border 
                 {
-                    Console.Write("--+");                   //??? added a + but now getting 2 extra -                   
+                    Console.Write("-+");                   //??? added a + but now getting 2 extra -                   
                     //Console.Write("+");                   //??? AFTER DUBUGGING FEEL I SHOULD ADD SOMETHING HERE (FOR COL)                     
                 }
                 Console.WriteLine("");
 
                 for (int i = 0; i < rows; i++)
                 {
-                    Console.Write("| ");
+                    Console.Write("|");
                     for (int j = 0; j < cols; j++)
                     {
-                        Console.Write(grid[i, j] + " | ");    //replaced space with|, but now has extra | at the end 
+                        Console.Write(grid[i, j] + "|");    //replaced space with|, but now has extra | at the end 
                     }
                     Console.WriteLine("");
 
                 }
 
                 Console.Write("+");
-                for (int j = 0; j < cols+1; j++)  //bottom border 
+                for (int j = 0; j < cols; j++)  //bottom border 
                 {
-                    Console.Write("--+");       //added a +
+                    Console.Write("-+");       //added a +
                 }
                 Console.WriteLine("");          
 
