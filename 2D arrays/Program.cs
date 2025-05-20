@@ -105,11 +105,11 @@ namespace _2D_arrays
                         grid[i, j] = ((i + j) % 2 == 0) ? SYM1 : SYM2;        //checks if i and j are even 
                     }
                 }
-                Console.Write("+-");             
+                Console.Write("+");             
 
                 for (int j = 0; j < cols-1; j++)              //top border 
                 {
-                    Console.Write("--+-");                   //??? added a + but now getting 2 extra -                   
+                    Console.Write("--+");                   //??? added a + but now getting 2 extra -                   
                     //Console.Write("+");                   //??? AFTER DUBUGGING FEEL I SHOULD ADD SOMETHING HERE (FOR COL)                     
                 }
                 Console.WriteLine("");
@@ -119,16 +119,16 @@ namespace _2D_arrays
                     Console.Write("|");
                     for (int j = 0; j < cols; j++)
                     {
-                        Console.Write(grid[i, j] + " | ");    //replaced space with|, but now has extra | at the end 
+                        Console.Write(grid[i, j] + "|");    //replaced space with|, but now has extra | at the end 
                     }
                     Console.WriteLine("");
 
                 }
 
-                Console.Write("+-");
+                Console.Write("+");
                 for (int j = 0; j < cols-1; j++)  //bottom border 
                 {
-                    Console.Write("--+-");       //added a +
+                    Console.Write("--+");       //added a +
                 }
                 Console.WriteLine("");          
 
